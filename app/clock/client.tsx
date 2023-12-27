@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-export function Client() {
+export function Client({ timezone }: { timezone?: string }) {
   const [time, setTime] = useState("");
 
   useEffect(() => {
     async function loadData() {
-      const data = await fetch("/api/clock").then((res) => res.json());
+      const param = timezone ? `/${timezone}` : "";
+
+      const data = await fetch(`/api/clock${param}`).then((res) => res.json());
 
       setTime(data.time);
     }
