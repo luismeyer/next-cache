@@ -2,13 +2,8 @@ import { Suspense } from "react";
 import { RSC } from "./server";
 import { Client } from "./client";
 import { Buttons } from "./buttons";
-import { TimezonePicker } from "./timezone-picker";
 
-export default function Home({
-  searchParams: { timezone },
-}: {
-  searchParams: Record<string, string>;
-}) {
+export default function Home() {
   return (
     <div className="grid gap-8">
       <div className="grid gap-4">
@@ -22,22 +17,6 @@ export default function Home({
 
         <Buttons />
       </div>
-
-      <div className="grid gap-4">
-        <h2 className="text-lg">
-          Dynamic <b>{timezone}</b>
-        </h2>
-
-        <Suspense>
-          <RSC timezone={timezone} />
-        </Suspense>
-
-        <Client timezone={timezone} />
-
-        <Buttons timezone={timezone} />
-      </div>
-
-      <TimezonePicker />
     </div>
   );
 }

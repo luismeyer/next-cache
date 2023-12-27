@@ -2,6 +2,6 @@
 
 import { revalidatePath } from "next/cache";
 
-export async function revalidateApiPath(timezone?: string) {
+export async function revalidateApiPath() {
   revalidatePath("/api/clock");
 }

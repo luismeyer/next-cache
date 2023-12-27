@@ -3,20 +3,18 @@
 import { useEffect, useState } from "react";
 import { Time } from "./time";
 
-export function Client({ timezone }: { timezone?: string }) {
+export function Client() {
   const [time, setTime] = useState("");
 
   useEffect(() => {
     async function loadData() {
-      const param = timezone ? `/${timezone}` : "";
-
-      const data = await fetch(`/api/clock${param}`).then((res) => res.json());
+      const data = await fetch("/api/clock").then((res) => res.json());
 
       setTime(data.time);
     }
 
     void loadData();
-  }, [timezone]);
+  }, []);
 
   return (
     <div className="grid">
