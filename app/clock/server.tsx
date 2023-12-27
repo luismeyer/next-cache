@@ -1,11 +1,11 @@
-import { fetchTime } from "./api/fetch-time";
+import { fetchTime } from "../api/fetch-time";
 
 export async function RSC() {
   const time = await fetchTime();
 
   return (
-    <div>
-      <span>RSC</span>
+    <div className="grid">
+      <span>RSC:</span>
       <span>{time}</span>
     </div>
   );
