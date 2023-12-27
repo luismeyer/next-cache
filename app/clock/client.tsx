@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Time } from "./time";
 
 export function Client({ timezone }: { timezone?: string }) {
   const [time, setTime] = useState("");
@@ -15,12 +16,12 @@ export function Client({ timezone }: { timezone?: string }) {
     }
 
     void loadData();
-  }, []);
+  }, [timezone]);
 
   return (
     <div className="grid">
       <span>Client</span>
-      <span>{time}</span>
+      <Time>{time}</Time>
     </div>
   );
 }

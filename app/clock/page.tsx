@@ -24,7 +24,9 @@ export default function Home({
       </div>
 
       <div className="grid gap-4">
-        <h2 className="text-lg">Dynamic</h2>
+        <h2 className="text-lg">
+          Dynamic <b>{timezone}</b>
+        </h2>
 
         <Suspense>
           <RSC timezone={timezone} />

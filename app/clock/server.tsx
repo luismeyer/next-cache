@@ -1,4 +1,5 @@
 import { fetchTime } from "../api/fetch-time";
+import { Time } from "./time";
 
 export async function RSC({ timezone }: { timezone?: string }) {
   const time = await fetchTime(timezone);
@@ -6,7 +7,7 @@ export async function RSC({ timezone }: { timezone?: string }) {
   return (
     <div className="grid">
       <span>RSC:</span>
-      <span>{time}</span>
+      <Time>{time}</Time>
     </div>
   );
 }
