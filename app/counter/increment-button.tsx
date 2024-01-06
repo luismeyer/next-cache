@@ -23,7 +23,7 @@ export function IncrementButton(props: { timestamp: number }) {
   }
 
   return (
-    <div>
+    <div className="grid">
       <button onClick={handleClick}>Increase</button>
       <button onClick={() => revalidate()}>Revalidate Path</button>
 
