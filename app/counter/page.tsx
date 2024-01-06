@@ -2,7 +2,7 @@ import { kv } from "@vercel/kv";
 
 import { IncrementButton } from "./increment-button";
 
-export const revalidate = 10;
+export const revalidate = 60;
 
 export default async function Counter() {
   const count = await kv.get<number>("counter");

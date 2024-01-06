@@ -23,9 +23,13 @@ export function IncrementButton(props: { timestamp: number }) {
   }
 
   return (
-    <div className="grid">
-      <button onClick={handleClick}>Increase</button>
-      <button onClick={() => revalidate()}>Revalidate Path</button>
+    <div className="grid gap-2">
+      <button className="border-2 rounded" onClick={handleClick}>
+        Increase
+      </button>
+      <button className="border-2 rounded" onClick={() => revalidate()}>
+        Revalidate Path
+      </button>
 
       <p>Time after click: {count}</p>
       <p>Timestamp: {props.timestamp}</p>
